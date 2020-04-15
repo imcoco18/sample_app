@@ -25,9 +25,6 @@ h1{
 }
 table{
 	table-layout: fixed;
-
-}
-
 }
 .edit{
 	line-height: 18px;
@@ -62,8 +59,8 @@ table{
 .toplink{
 	color: #666;
 }
-
-
-
-
+.newbook-headline{
+	margin-top: 40px;
+	margin-bottom: 0;
+}
 
