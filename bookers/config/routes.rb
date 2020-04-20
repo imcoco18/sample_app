@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
- # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-   resources :books
-
-   root "books#topindex"
+  root 'books#topindex'
+  resources :books
+  devise_for :users
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
