@@ -2,15 +2,15 @@ class BooksController < ApplicationController
   def topindex
   end
 
+  def aboutindex
+  end
+
   def index
   	@books = Book.all
   	@book = Book.new
   	@user = current_user
   end
 
-  def new
-  	@book = Book.new
-  end
   def create
   	@book = Book.new(book_params)
   	@book.user_id = current_user.id
@@ -19,25 +19,41 @@ class BooksController < ApplicationController
 
       flash[:notice] = "Book was successfully created."
   	  redirect_to book_path(@book.id)
-
-    else
+  	else
+  	  @user = current_user
       @books = Book.all
-      render :index
+      render "index"
 
     end
   end
 
   def show
+  	@book = Book.new
+  	@book = Book.find(params[:id])
+  	@user = @book.user
+
   end
 
   def edit
+  	@book = Book.find(params[:id])
   end
 
   def update
+  	@book = Book.find(params[:id])
+
+    if @book.update(book_params)
+
+    	flash[:notice] = "Book was successfully updated."
+    	redirect_to book_path(@book.id)
+    else
+    	render "edit"
+    end
   end
 
   def destroy
-
+  	@book = Book.find(params[:id])
+    @book.destroy
+    redirect_to books_path
   end
 
 
@@ -46,4 +62,5 @@ class BooksController < ApplicationController
   def book_params
   	params.require(:book).permit(:title, :body, :user_id)
   end
+
 end

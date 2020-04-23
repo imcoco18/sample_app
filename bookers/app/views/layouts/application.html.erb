@@ -25,7 +25,7 @@
                   <% end %>
                 </li>
                 <li>
-                  <%= link_to "#" do %>
+                  <%= link_to users_path do %>
                    <span class="glyphicon glyphicon-user users"> Users</span>
                   <% end %>
                 </li>
@@ -46,7 +46,7 @@
                   <% end %>
                 </li>
                 <li>
-                  <%= link_to "#" do %>
+                  <%= link_to home_about_path do %>
                   <span class="glyphicon glyphicon-link about"> About</span>
                   <% end %>
                 </li>
@@ -56,13 +56,28 @@
                   <% end %>
                 </li>
                 <li>
-                  <li><%= link_to ' login', new_user_session_path ,class: 'glyphicon glyphicon-log-in sign_in'%></li>> login</span>
+                  <li><%= link_to ' login', new_user_session_path ,class: 'glyphicon glyphicon-log-in sign_in'%></li>
                 </li>
             <% end %>
           </ul>
         </div>
         </header>
 
+
+
     <%= yield %>
+
+
+
+
+        <footer>
+          <div class='container'>
+            <div class='row'>
+              <div class='col-xs-3 col-xs-offset-9'>
+                <p>CopyRight Infratop.inc</p>
+              </div>
+            </div>
+          </div>
+        </footer>
   </body>
 </html>

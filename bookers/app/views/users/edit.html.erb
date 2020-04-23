@@ -1,21 +1,19 @@
 <div class='body'>
   <div class='container'>
+  <div class="row">
 
-        <p id="notice"></p>
-
-
-      	<h2>User info</h2>
+   <section class="headline">
+    <h2>User info</h2>
     <%= form_for(@user) do |f| %>
 
 
     <div class="field">
       <label for="user_name">Name</label>
-      <%= f.text_field :name, autofocus: true, class:"form-control", id:"user_name", placeholder:"名前"%>
+      <%= f.text_field :name, autofocus: true, class:"", id:"user_name", placeholder:"名前"%>
     </div>
 
     <div class="field">
       <label for="user_image">Image</label>
-       <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
        <%= f.attachment_field :profile_image, class: "user-edit-form" %>
 
     </div>
@@ -30,7 +28,9 @@
 
     <% end %>
 
+   </section>
 
 
+  </div>
   </div>
 </div>
