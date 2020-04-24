@@ -1,7 +1,7 @@
 <div class='body'>
   <div class='container'>
   <div class="row">
-
+    <div class="block">
    <section class="headline">
     <h2>User info</h2>
     <%= form_for(@user) do |f| %>
@@ -20,7 +20,7 @@
 
     <div class="field">
       <label for="user_introduction">Introduction</label>
-      <textarea class="introduction" name="user[introduction]" id="user_introduction">
+      <%= f.text_area :introduction, class: "user-introduction" %>
       </textarea>
     </div>
 
@@ -30,7 +30,7 @@
 
    </section>
 
-
+    </div>
   </div>
   </div>
 </div>
